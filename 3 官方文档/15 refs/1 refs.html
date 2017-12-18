@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/react/15.5.4/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.24.2/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+</head>
+<body>
+<blockquote>
+    <h1>何时使用 Refs,下面是几个适合使用 refs 的情况：</h1>
+    <p>处理焦点、文本选择或媒体控制。</p>
+    <p>触发强制动画。</p>
+    <p>集成第三方 DOM 库</p>
+    <p>如果可以通过声明式实现，则尽量避免使用 refs。</p>
+    <h2>ref 相当于声明一个dom</h2>
+    <h2>ref操纵的是真实dom</h2>
+</blockquote>
+<div id="example"></div>
+<script type="text/babel">
+    class Element extends React.Component{
+        constructor(props){
+            super(props);
+            this.handClick = this.handClick.bind(this);
+        }
+        componentDidMount(){
+            this.textInput.onclick = ()=>{
+               alert(this.textInput.value)
+
+            }
+        }
+        handClick(e){
+            alert(e.target.value)
+        }
+        render(){
+            return(<div>
+                <input onClick={this.handClick} value="It is a button No refs" type="button"/>
+                <input ref={(input)=>{this.textInput = input}} value="It is a button Yes refs" type="button"/>
+            </div>)
+        }
+    }
+    ReactDOM.render(<Element />,document.getElementById('example'))
+</script>
+</body>
+</html>

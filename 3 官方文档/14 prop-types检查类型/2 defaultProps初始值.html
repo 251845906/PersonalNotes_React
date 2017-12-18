@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/react/15.5.4/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.24.2/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    class Element extends React.Component{
+        render(){
+            return(<p>hello,{this.props.name}</p>)
+        }
+    }
+    Element.defaultProps  = {
+        name: 'defaultProps用来确保 this.props.name 在父组件没有特别指定的情况下，有一个初始值。类型检查发生在 defaultProps 赋值之后，所以类型检查也会应用在 defaultProps 上面。'
+    };
+    ReactDOM.render(<Element />,document.getElementById('example'))
+</script>
+</body>
+</html>
