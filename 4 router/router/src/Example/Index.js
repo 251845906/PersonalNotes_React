@@ -1,4 +1,5 @@
 import React ,{ Component } from 'react';
+import ReactDOM from "react-dom"
 import { BrowserRouter as Router,Route,Link} from 'react-router-dom';
 
 class NavRouter extends React.Component{
@@ -9,14 +10,11 @@ class NavRouter extends React.Component{
     render(){
         return(
                 <div>
-                    <h1>遇见的问题 1 match 2 </h1>
-                    <h2>重点：：`${this.match.url}/:nav`</h2>
-                    <h2>重点：：match.params.nav获取的/后面的值</h2>
                     <ul>
                         <li><Link to={`${this.match.url}/1`}>基本使用</Link></li>
-                        <li><Link to={`${this.match.url}/2`}>URL认证参数</Link></li>
-                        <li><Link to={`${this.match.url}/3`}>自定义链接</Link></li>
-                        <li><Link to={`${this.match.url}/4`}>阻止导航</Link></li>
+                        <li><Link to={`${this.match.url}/2`}>URL参数</Link></li>
+                        <li><Link to={`${this.match.url}/3`}>认证</Link></li>
+                        <li><Link to={`${this.match.url}/4`}>阻止导航 自定义链接</Link></li>
                         <li><Link to={`${this.match.url}/5`}>未匹配（404）</Link></li>
                         <li><Link to={`${this.match.url}/6`}>路径递归</Link></li>
                         <li><Link to={`${this.match.url}/7`}>侧边栏</Link></li>
@@ -36,15 +34,32 @@ const Example = ({match}) =>{
     switch (Url){
         case '1':
             return (
-                <div>看首页的源码</div>
-            )
+                <div>
+                    <h1>遇见的问题 1 match </h1>
+                    <p>{"`{$this.match.url}`"}</p>
+                    <p>{"`{$this.match.url}`"}指的的是当前的url</p>
+                    <p>{"`{$match.url}`"}根据方式不同也写成这样</p>
+                    <h1>遇见的问题 2 Route的render属性 reder（）可直接写入jsx</h1>
+                    <h1>遇见的问题 3 Route的exact属性  exact为true时，则要求路径与location.pathname必须完全匹配；</h1>
+                </div>
+            );
             break;
         case '2':
             return (
-                <div></div>
-            )
+                <div>
+                    <h1>重点：：{"`{$this.match.url}/:nav(随意定义)`"}</h1>
+                    <p>重点：：match.params.nav获取的/后面的值</p>
+                    <p>重点：：match.params获取的是子域名</p>
+                    {match.params.nav}
+                </div>
+            );
             break;
         case '3':
+            return(
+                <div>
+                    (目前没看懂什么意思先看后边的)
+                </div>
+            );
             break;
         case '4':
             break;
