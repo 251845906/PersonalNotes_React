@@ -1,0 +1,42 @@
+import {BrowserRouter as Router, Route, Link ,Switch } from 'react-router-dom';
+ <Router>
+    {/*switch 也是必须的如果没有则报错*/}
+    <Switch>
+        {/*{exact属性 是必须的如果没有则不会跳转 }*/}
+        <Route exact path="/" component={App} />
+        <Route path="/about" component={About} />
+        <Route path="/inbox" component={Inbox} />
+        <Route path="/messages" component={Message} />
+    </Switch>
+</Router>
+
+<Route>
+它最基本的职责就是当页面的访问地址与 Route 上的 path 匹配时
+<Route> 自带三个 render method 和三个 props 。
+    render methods 分别是：
+    <Route component>   只有当访问地址和路由匹配时，一个 React component 才会被渲染，此时此组件接受 route props (match, location, history)。
+    <Route render>
+    <Route children>
+props 分别是：
+    match
+    location
+    history
+所有的 render method 无一例外都将被传入这些 props。
+
+
+
+<Link to=“” />
+to: string
+<Link to="/about">关于</Link>   需要跳转到的路径(pathname)或地址（location）
+
+<Link to={{
+  pathname: '/courses',
+  search: '?sort=name',
+  hash: '#the-hash',
+  state: { fromDashboard: true }
+}}/>
+to: object
+需要跳转到的地址（location）。
+
+<Link to="/courses" replace />   replace: bool
+当设置为 true 时，点击链接后将使用新地址替换掉访问历史记录里面的原地址。当设置为 false 时，点击链接后将在原有访问历史记录的基础上添加一个新的纪录。默认为 false。
