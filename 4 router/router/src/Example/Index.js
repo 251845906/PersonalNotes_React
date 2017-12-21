@@ -2,7 +2,7 @@ import React ,{ Component } from 'react';
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router,Route,Link} from 'react-router-dom';
 
-class NavRouter extends React.Component{
+class NavRouter extends Component{
     constructor({match},props){
         super(props);
         this.match = match;
