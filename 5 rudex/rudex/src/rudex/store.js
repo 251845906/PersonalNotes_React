@@ -1,6 +1,6 @@
 import { createStore } from 'react-router-redux';
-import reducer from './reducer';
+import todoApp  from './reducer';
 
-let store = createStore(reducer,window.STATE_FROM_SERVER)
+let store = createStore(todoApp,window.STATE_FROM_SERVER)
 
 

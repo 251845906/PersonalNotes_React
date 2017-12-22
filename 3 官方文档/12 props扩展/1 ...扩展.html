@@ -17,7 +17,11 @@
         const props = {a:111,b:222,c:333,color:'blue'};
         return(<FancyBorder {...props} />)
     }
-    ReactDOM.render(<Element />,document.getElementById('example'));
+    const Element1 = (props) => {
+        let { val } = props;
+        return (<h1> {val}</h1>)
+    }
+    ReactDOM.render(<Element1 val={'这是一种新方法es6的解构'} />,document.getElementById('example'));
 </script>
 </body>
 </html>
