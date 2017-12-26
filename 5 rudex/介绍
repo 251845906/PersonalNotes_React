@@ -1,0 +1,43 @@
+react-redux仅有2个API，Provider和connect，Provider提供的是一个顶层容器的作用，实现store的上下文传递。
+
+connect(mapStateToProps, mapDispatchToProps, mergeProps, options = {}) {}
+        mapStateToProps：传入所有state，返回指定的state数据。
+        mapDispatchToProps：传入dispatch，返回使用bindActionCreators()绑定的action方法。
+        mergeProps：mergeProps如果不指定，则默认返回 Object.assign({}, ownProps, stateProps, dispatchProps)，顾名思义，mergeProps是合并的意思，将state合并后传递给组件。
+        options：通过配置项可以更加详细的定义connect的行为，通常只需要执行默认值。
+
+
+redux有两个包   一个是redux   一个是react-redux
+
+        action
+view -----------> store{reducer----->state}
+ ^                   |
+ |___________________v
+
+
+ redux 项目结构  {
+        actions     用户行为 用户执行什么操作
+        components
+        container
+        reducer     负责分发行为的  负责分发操作
+        index.html  组件
+        server.js   服务器组件
+        webpack     打包工具
+ }
+
+ action   行为抽象
+
+ reducer  响应的抽象
+ {
+    1 是纯方法
+    2 传入的是旧的状态和action
+    3 返回的是心状态
+ }
+
+store {
+    1 action是作用域store
+    2 reducer根据store响应的
+    3 store是唯一的
+    4 store包括了完整的state
+    5 state完全可预测的
+}
