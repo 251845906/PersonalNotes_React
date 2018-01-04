@@ -1,0 +1,115 @@
+ <Carousel
+
+    autoplay={true}          自动轮播
+
+    effect="fade"            动画方式  淡入还是切换
+
+    autoplaySpeed={5000}     轮播间隔时间
+
+    arrows = {true}          箭头键导航  上下切换按键
+
+    centerMode ={false}      居中当前幻灯片 不用写默认就行
+
+    draggable ={true}   bool	true  是否可拖动
+
+    infinite={true}	    bool	   true	  是否开启循环
+
+    pauseOnHover={true}	bool	true	阻止悬停时自动播放
+
+    rtl={true}       bool	false       反转幻灯片顺序  倒着来
+
+    speed="500"                         动画运行速度
+
+    accessibility={true}     启用制表符和箭头键导航（暂时不知道用处）
+>
+    <div>轮播内容</div>
+    <div>轮播内容</div>
+</Carousel>
+
+
+
+
+
+api
+autoplay  自动轮播
+autoplaySpeed  轮播间隔
+
+
+adaptiveHeight   bool	false   自动调整滑块的高度  （没见具体作用）
+
+
+arrows          箭头键导航  上下切换按键
+    nextArrow   React元素为下一个箭头。
+    prevArrow   Rev元素为prev箭头
+
+centerMode   默认false   居中当前幻灯片 不用写默认就行
+    centerPadding    string    为true时出现边距   默认50px
+    cssEase   值为'ease'    没搞明白什么意思
+
+    这段css更好使
+    .slick-slide .xxxxx{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%,0);
+      -ms-transform: translate(-50%,0); /* IE 9 */
+      -webkit-transform: translate(-50%,0); /* Safari and Chrome */
+      width: 1920px;
+      height: 500px;
+    }
+
+draggable    bool	true  是否可拖动
+
+infinite	bool	true	是否开启循环
+initialSlide  int	0       第一张幻灯片的索引值  data-index
+
+pauseOnHover	bool	true	阻止悬停时自动播放
+
+useCSS      useCSS	bool	true	启用/禁用CSS转换  css动画
+
+afterChange   func	 Default   跳转后回调
+
+beforeChange  func	 Default   跳转前回调
+
+vertical	bool	false   垂直滑动
+
+
+
+
+不明白的api
+
+slickGoTo	int	Default	转到指定的幻灯片号码
+
+
+touchMove	bool	true
+
+touchThreshold	int	5
+
+variableWidth	bool	false
+
+swipe	bool	true
+
+swipeToSlide	bool	false
+
+slide	string	'div'
+
+slidesToShow	int	1	是	是
+
+slidesToScroll	int	1
+
+responsive	array	null	基于断点定制（下面的详细解释）
+
+lazyLoad	bool	false	根据需要加载图像或渲染组件
+
+focusOnSelect   bool	false	点击滑动
+
+
+customPaging  function  自定义分页模板
+
+dots   bool	  Default
+
+dotsClass	string	'slick-dots'	CSS类的点
+
+accessibility    bool	 true   启用制表符和箭头键导航
+
+
