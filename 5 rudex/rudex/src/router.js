@@ -9,7 +9,7 @@ import Index from './page/Index';
 import configureStore from './rudex/store';
 //
 let store = configureStore(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-                            // 传入的值使用浏览器插件
+                            // 传入的值使用浏览器插件  可选择不填
 
 export default class Nrouter extends Component{
     render(){
