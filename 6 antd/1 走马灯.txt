@@ -11,6 +11,30 @@ css更改
           color: #000;
         }
     }
+    Carousel 需要更改的css有2部分
+        1 .ant-carousel { 控制外围的大小}
+        2 .slick-slide {} 自己写的子元素
+        3 .slick-dots{} menu的样式
+        4 .slick-prev{}  .slick-next{}
+            按钮的样式
+            .slick-arrow  按钮的通用class
+            组件基本设置
+    <Carousel
+
+
+Carousel  有4层
+    1 .ant-carousel 最外围的层的大小 决定了banner的大小
+    2 .slick-slider  未明白
+    3 .slick-list   显示框 需要溢出隐藏的部分
+    4 .slick-track  定位的层 滑动层 图片总长度
+    5 .slick-slide  自己写的子元素
+    ==============
+    .slick-dots  menu 菜单
+        dots ={true} 显示和不显示menu菜单
+    .slick-prev  .slick-next
+        上一张  和   下一张
+        arrows={true} 控制显示和不显示按钮
+
 
 import { Carousel  } from 'antd'
 
@@ -19,7 +43,7 @@ import { Carousel  } from 'antd'
 
         autoplay={true}          //自动轮播
 
-        effect={"dade" || "scrollx"}           动画方式  淡入还是切换
+        effect={"dade" || "scrollx"}      动画方式  淡入还是切换
 
         autoplaySpeed={5000}     轮播间隔时间
 
@@ -33,12 +57,13 @@ import { Carousel  } from 'antd'
 
         pauseOnHover={true}	bool	true	阻止悬停时自动播放  默认开启
 
-        afterChange = {()=>{}}
+        afterChange = {()=>{}}   运动后的回调
 
-        beforeChange = {()=>{}}
+        beforeChange = {()=>{}}  运动前的回调
 
         dots={true}   bool	   面板菜单 - - - -
 
+        vertical={true}     垂直滑动
 
     >
     <div>轮播内容</div>

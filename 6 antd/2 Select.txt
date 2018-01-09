@@ -1,3 +1,35 @@
+设置select 样式的需要的class
+
+1 .ant-select{} 布局的框的大小
+2 .ant-select-selection {} select 框的大小
+3 .ant-select-selection__rendered 内容的大小
+4 .ant-select-arrow  下拉符号
+5 .xxxx 自己设置的下拉菜单的样式 dropdownClassName=“”
+6 .ant-select-dropdown-menu-item 下拉内容的设置
+    .ant-select-dropdown-menu-item-selected
+    设置选中的状态
+
+
+select 有4层
+   1 <Select style={{}}>
+        设置的的最外围的  ant-select 最外围的框大小
+   2 .ant-select-selection
+        限制内容框的大小也就是你能看见的框的大小
+   3 .ant-select-selection__rendered
+        里面文本的大小
+        同级的有.ant-select-arrow   下拉三角符号的样式
+   4 dropdownClassName=“”
+        1 下拉框的class  自己设置
+        2 dropdownStyle={{}} 下拉框的样式  行内
+        3 getPopupContainer={() => document.getElementsByClassName('Index')[0]}
+        4 下拉框渲染的父元素  自己填写 默认情况是body
+        5 然后根据自己设置class设置样式 （注 看好父元素是哪个）
+        6 下拉框的子元素 有三层 （自己设置的样式就是下拉框最外层的框）
+            div
+            ul .ant-select-dropdown-menu  外围的框
+            li .ant-select-dropdown-menu-item
+                里面文本的的 下拉框的内容class
+
 
 import { Select } from 'antd'
 
@@ -9,13 +41,12 @@ const Option = Select.Option;
 
         style={}               Select层的样式
 
-        dropdownClassName=“”  下拉菜单的 className 属性
-                              因为下拉的菜单是body的直接子元素  最好设置一个className
-
-        dropdownStyle={{}}     下拉菜单的样式(太繁重最好用外链样式)
-
         getPopupContainer={() => document.getElementsByClassName('Index')[0]}
-                                渲染到哪个父元素下面默认的body
+            渲染到哪个父元素下面默认的body
+
+        dropdownClassName=“”
+            下拉菜单的 className 属性
+            因为下拉的菜单是body的直接子元素  最好设置一个className
 
         value="书名"   当前选中的的可以指定
  >

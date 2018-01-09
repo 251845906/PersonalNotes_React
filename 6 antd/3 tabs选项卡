@@ -1,0 +1,15 @@
+ 基本使用  还有其他使用方法
+ <Tabs
+    defaultActiveKey="1" 默认情况下显示tab
+    activeKey="3"        跳转的制定的tab (还有其他属性，暂时不知效果)
+    animated = {false}   是否用动画切换tab
+    size="small|default"
+    onNextClick	        Next按钮被点击的回调	Function	无
+    onPrevClick	        Prev按钮被点击的回调	Function	无
+    onTabClick	        Tab被点击的回调
+ >
+    <TabPane tab="tab1" key="1"></TabPane>
+    <TabPane tab="tab2" key="2"></TabPane>
+    <TabPane tab="tab3" key="3"></TabPane>
+    <TabPane tab="tab4" key="4"></TabPane>
+  </Tabs>
