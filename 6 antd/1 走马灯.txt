@@ -82,9 +82,6 @@ arrows          箭头键导航  上下切换按键
 nextArrow   React元素为下一个箭头。
 prevArrow   Rev元素为prev箭头
 
-centerMode   默认false   居中当前幻灯片 不用写默认就行
-centerPadding    string    为true时出现边距   默认50px
-cssEase   值为'ease'    没搞明白什么意思
 
 这段css更好使
 .slick-slide .xxxxx{
@@ -97,6 +94,17 @@ transform: translate(-50%,0);
 width: 1920px;
 height: 500px;
 }
+
+
+    slidesToScroll="1" 开启分页模式
+    slidesToShow="3"
+    下面的配合 focusOnSelect使用
+    centerMode   默认false   居中当前幻灯片 不用写默认就行
+    centerPadding    string    为true时出现边距   默认50px
+    cssEase   值为'ease'    没搞明白什么意思
+
+
+
 
 draggable    bool	true  是否可拖动
 
@@ -113,6 +121,13 @@ afterChange   func	 Default   跳转后回调
 beforeChange  func	 Default   跳转前回调
 
 vertical	bool	false   垂直滑动
+
+slidesToShow="3"	显示几页  开启多图显示
+
+slidesToScroll="1"  每次切换几个页面
+
+
+
 
 
 

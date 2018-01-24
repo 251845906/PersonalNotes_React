@@ -9,19 +9,28 @@
 <body>
 <div id="example"></div>
 <script type="text/babel">
-    const numbers = [1, 2, 3, 4, 5];
-    numbers.map(
-        function(number,i){
-            console.log(arguments)
+//    const numbers = [1, 2, 3, 4, 5];
+//    numbers.map(
+//        function(number,i){
+//            console.log(arguments)
 //            arguments 有三个
 //            1 位内容
 //            2位索引
 //            3位数组本身
-        }// 不报错
+//        }// 不报错
 //        (number,i) => {console.log(arguments)}//  报错
-        );
+//        );
 //    i 索引  number 内容
 //    map（）
+            const numbers = [1, 2, 3, 4, 5];
+            const listItems = numbers.map((number) => {return (<li key={number}>{number}</li>)} )
+
+
+
+        ReactDOM.render(
+                <ul>{listItems}</ul>,
+            document.getElementById('example')
+        );
 </script>
 </body>
 </html>
